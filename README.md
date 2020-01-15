@@ -1,4 +1,5 @@
-# servicedog
+# servicedog  WORKS LOCALLY on http://192.168.1.104:8080/
+
 
 ## Project setup
 ```
