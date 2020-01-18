@@ -18,7 +18,7 @@
       <button><a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.html">Look at dog pics</a>working on this</button>
 
 
-        <button><a href="/search.html">search</a>working on this</button>
+        <button><a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/search.html">search</a>working on this</button>
       
 
 
