@@ -85,6 +85,75 @@
   <br>
   Next steps:  deploy using pHp server via GoDaddy cPanel and document a "how-to"
 </table>
+<br>
+test api call for lazy loading using URL for micro architecture
+<a href= "/search.html">search</a>
+<br>
+
+
+
+
+<div id="app">
+    <v-app>
+      <v-content>
+        <v-container>
+
+            <v-layout align-center justify-center>
+                <v-btn color="blue" dark large @click="loadNextImage" >
+                    Another &nbsp; <v-icon>refresh</v-icon>
+                </v-btn>
+            </v-layout>
+
+            <v-layout row wrap>
+                <v-flex xs12 >
+                <v-card flat tile class="d-flex">
+                    <v-img :src="image.url" contain>
+                    </v-img>
+                </v-card>
+                </v-flex>
+            </v-layout>
+
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+ 
+  <script>
+    new Vue({ 
+        el: '#app',
+        data: {
+            image: { url: ""}
+        },
+        created(){
+            this.loadNextImage();
+        } ,
+        methods:{
+            async loadNextImage()
+            {
+                try{
+                    axios.defaults.headers.common['b15f7ee2-0c1d-4c10-a85f-58a31fb87f06'] = "DEMO-API-KEY" // Replace this with your API Key
+
+                    let response = await axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit:1, size:"full" } } ) // Ask for 1 Image, at full resolution
+                    
+                    this.image = response.data[0] // the response is an Array, so just use the first item as the Image
+
+                    console.log("-- Image from TheCatAPI.com")
+                    console.log("id:", this.image.id)
+                    console.log("url:", this.image.url)
+
+                }catch(err){
+                    console.log(err)
+                }
+            }
+        }
+    })
+  </script>
+
+
+
+
+
+
 
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
