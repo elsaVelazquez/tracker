@@ -73,11 +73,18 @@ name: 'initDogs',
     ]),
     components: {
     Dog
-    }
+    },
   }
 </script>
 
+methods: {
+  ...mapActions('auth', ['logout']),
 
+  logoutRedirect() {
+    // Force vuex reset with $router.go
+    this.logout().then(() => this.$router.go({ name: 'Login' }))
+  },
+},
 
 
 
