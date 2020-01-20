@@ -15,6 +15,11 @@
       </button>
 
 
+      <a href target=”_blank”>
+          <button class="btn btn-primary"  @click="showcaseAPI" style="text-align:center">Designed & Developed API
+      </button>
+      </a>
+
 
 
       <a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.html">
@@ -39,7 +44,7 @@
 
     </div>
 
-    <div class="col-me-1">
+    <div class="col-me-12">
         <ShowcaseAPI
           valid-v-for="(showcaseapi, index) in $store.state.showcaseapi"
           :showcaseapi="showcaseapi"
@@ -83,6 +88,7 @@ Vue.http.get('/http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.h
 <script>
 import { mapActions } from 'vuex'
 import Dog from './components/Dog.vue'
+import ShowcaseAPI from './components/ShowcaseAPI.vue'
 
 export default{
 name: 'initDogs',
@@ -90,7 +96,8 @@ name: 'initDogs',
     'initDogs'
     ]),
     components: {
-    Dog
+    Dog,
+    ShowcaseAPI
     },
 
   }
