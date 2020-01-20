@@ -14,3 +14,5 @@ export const initDogs = ({commit}) => {  //to commit mutations
 	.then(json => commit(url.INIT_TIMELINE, json))
 
 }
+
+

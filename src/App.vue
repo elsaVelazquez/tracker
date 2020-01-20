@@ -15,7 +15,16 @@
       </button>
 
 
-      <button><a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.html">Look at dog pics</a>working on this</button>
+      <a href target=”_blank”>
+          <button class="btn btn-primary"  @click="showcaseAPI" style="text-align:center">Designed & Developed API
+      </button>
+      </a>
+
+
+
+      <a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.html">
+      <button >Look at <a> dog pics - working on this</a></button>
+      </a>
 
 
         <button><a href="http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/search.html">search</a>working on this</button>
@@ -34,10 +43,22 @@
         />
 
     </div>
+
+    <div class="col-me-12">
+        <ShowcaseAPI
+          valid-v-for="(showcaseapi, index) in $store.state.showcaseapi"
+          :showcaseapi="showcaseapi"
+          key="index"
+        />
+
+    </div>
     <div class = "">
         {{$store.state}}
     </div>
   </div>
+
+
+
 
     <br>
     <p>
@@ -67,6 +88,7 @@ Vue.http.get('/http://elsavelazquez.com/demo_CloudSystemsSoftwareEngineer/pics.h
 <script>
 import { mapActions } from 'vuex'
 import Dog from './components/Dog.vue'
+import ShowcaseAPI from './components/ShowcaseAPI.vue'
 
 export default{
 name: 'initDogs',
@@ -74,8 +96,10 @@ name: 'initDogs',
     'initDogs'
     ]),
     components: {
-    Dog
+    Dog,
+    ShowcaseAPI
     },
+
   }
 </script>
 
@@ -106,6 +130,7 @@ li {
 }
 a {
   color: #42b983;
+  font-color:#42b983
 }
 .center {
   margin: auto;
